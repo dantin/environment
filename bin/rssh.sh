@@ -28,9 +28,9 @@ SCRIPT_NAME=`basename $0`
 
 case ${HOST} in
     21)
-        Hostname=$(load_config_key "/home/david/Documents/work/fangdd/hosts.config" "21.hostname")
-        Username=$(load_config_key "/home/david/Documents/work/fangdd/hosts.config" "21.username")
-        Password=$(load_config_key "/home/david/Documents/work/fangdd/hosts.config" "21.password")
+        Hostname=$(load_config_key $CONFIG "21.hostname")
+        Username=$(load_config_key $CONFIG "21.username")
+        Password=$(load_config_key $CONFIG "21.password")
         auto_login_ssh "$Password" "$Username@$Hostname"
         ;;
     *)

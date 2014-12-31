@@ -4,11 +4,12 @@ PS="goto"
 HOME="/home/david"
 
 # 文档部分
-XINFANG_DOC="$HOME/Documents/work/peace"
+XINFANG_DOC="$HOME/Documents/work/fangdd"
 
 # 代码
 CODE="$HOME/Documents/code/projects"
 FDT_CODE="$HOME/Documents/code/fangdt"
+FDD_CODE="$HOME/Documents/code/fangdd"
 
 # 下载
 DOWNLOAD="$HOME/Downloads"
@@ -20,14 +21,17 @@ case "$1" in
     code)
         cd $CODE
         ;;
-    fdtcode)
+    fdt)
         cd $FDT_CODE
         ;;
-    down)
+    fdd)
+        cd $FDD_CODE
+        ;;
+    download)
         cd $DOWNLOAD
         ;;
     *)
         FULLPATH="~/bin/$PS"
-        echo "Usage: $FULLPATH {xfdoc|code|fdtcode|down}"
+        echo "Usage: $FULLPATH {xfdoc|code|fdt|fdd|download}"
         ;;
 esac
