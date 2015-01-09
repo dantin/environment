@@ -7,6 +7,7 @@ NGINX_HOME="/usr/local/share/nginx"
 
 # copy script utility in ~/.bin directory
 cp $BIN_DIR/*.sh $TO_DIR/bin
+cp $BIN_DIR/*.py $TO_DIR/bin
 cp $BIN_DIR/goto $TO_DIR/bin
 
 # Nginx
