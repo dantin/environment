@@ -31,11 +31,37 @@ case ${HOST} in
         Hostname=$(load_config_key $CONFIG "21.hostname")
         Username=$(load_config_key $CONFIG "21.username")
         Password=$(load_config_key $CONFIG "21.password")
+
         auto_login_ssh "$Password" "$Username@$Hostname"
+        ;;
+    78)
+        Hostname=$(load_config_key $CONFIG "78.hostname")
+        Username=$(load_config_key $CONFIG "78.username")
+        Password=$(load_config_key $CONFIG "78.password")
+
+        auto_login_ssh "$Password" "$Username@$Hostname"
+        ;;
+    151)
+        Hostname=$(load_config_key $CONFIG "151.hostname")
+        Username=$(load_config_key $CONFIG "151.username")
+        Password=$(load_config_key $CONFIG "151.password")
+
+        auto_login_ssh "$Password" "$Username@$Hostname"
+        ;;
+    gw)
+        Hostname=$(load_config_key $CONFIG "gw.hostname")
+        Username=$(load_config_key $CONFIG "gw.username")
+        Password=$2
+        if [ -z "$Password" ]
+        then
+            echo "Password can not be empty!"
+        fi
+
+        #auto_login_ssh "$Password" "$Username@$Hostname"
         ;;
     *)
         echo
-        echo "Usage: $SCRIPT_NAME {21}"
+        echo "Usage: $SCRIPT_NAME {21|78|151|gw <key>}"
         ;;
 esac
 
