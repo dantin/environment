@@ -76,9 +76,21 @@ case ${HOST} in
         Password=$(load_config_key $CONFIG "151.password")
         Dir=$(get_location "151" $2)
         ;;
+    s1)
+        Hostname=$(load_config_key $CONFIG "s1.hostname")
+        Username=$(load_config_key $CONFIG "s1.username")
+        Password=$(load_config_key $CONFIG "s1.password")
+        Dir=$(get_location "s1" $2)
+        ;;
+    s2)
+        Hostname=$(load_config_key $CONFIG "s2.hostname")
+        Username=$(load_config_key $CONFIG "s2.username")
+        Password=$(load_config_key $CONFIG "s2.password")
+        Dir=$(get_location "s2" $2)
+        ;;
     *)
         echo
-        echo "Usage: $SCRIPT_NAME {21|78|151} [app|log]"
+        echo "Usage: $SCRIPT_NAME {21|78|151|s1} [app|log]"
         exit 1
         ;;
 esac
